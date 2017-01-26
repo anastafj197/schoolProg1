@@ -27,13 +27,12 @@ public class sans {
 			while(fileScan.hasNextLine()) {
 				if (fileScan.nextLine().contains("\\")) {
 					fileString += "\n";
+				}
+
+			
+
+				fileString += fileScan.nextLine() + "\n";
 					
-				} else {
-
-					fileString += fileScan.nextLine() + "\n";
-				}	
-
-
 			}
 
 			System.out.println(fileString);
