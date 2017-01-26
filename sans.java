@@ -27,7 +27,7 @@ public class sans {
 			while(fileScan.hasNextLine()) {
 				String current = fileScan.nextLine();
 				System.out.println(current + "curr");
-				if (current.contains("\\")) {
+				if (current.contains("\\\\")) {
 					System.out.println("Work or nah!");
 					fileString += "\n";
 				}
