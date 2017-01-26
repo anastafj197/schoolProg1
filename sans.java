@@ -24,14 +24,17 @@ public class sans {
 
 			String fileString = "";
 
-			while(fileScan.hasNextLine()) {
+			String current = fileScan.hasNextLine();
+
+			while(current) {
+				
 				//if (fileScan.nextLine().contains("\\")) {
 					//fileString += "\n";
 				//}
 
 			
 
-				fileString += fileScan.nextLine() + "\n";
+				fileString += current + "\n";
 					
 			}
 
