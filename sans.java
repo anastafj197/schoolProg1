@@ -24,10 +24,8 @@ public class sans {
 
 			String fileString = "";
 
-			String current = fileScan.hasNextLine();
-
-			while(current) {
-				
+			while(fileScan.hasNextLine()) {
+				String current = fileScan.nextLine();
 				//if (fileScan.nextLine().contains("\\")) {
 					//fileString += "\n";
 				//}
