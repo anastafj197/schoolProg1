@@ -10,7 +10,7 @@ public class sans {
 	
 	public static void main (String [] args) throws FileNotFoundException {
 
-		System.out.println("Please enter a file name to strip");
+		System.out.println("* Enter a txt file name to strip *");
 
 	    Scanner keyboard = new Scanner(System.in);
 
@@ -31,6 +31,7 @@ public class sans {
 					//System.out.println("Work or nah!");
 					fileScan.nextLine();
 					fileString += "\n";
+					System.out.println("in the if");
 				}
 
 				System.out.println(current + " curr");
