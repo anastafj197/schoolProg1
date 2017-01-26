@@ -31,14 +31,15 @@ public class sans {
 					//System.out.println("Work or nah!");
 					fileScan.nextLine();
 					fileString += "\n";
-					System.out.println("in the if");
-				}
+					//System.out.println("in the if");
+				} else {
 
-				System.out.println(current + " curr");
+				//System.out.println(current + " curr");
 
 			
 
-				fileString += current + "\n";
+					fileString += current + "\n";
+				}
 					
 			}
 
