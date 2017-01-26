@@ -26,9 +26,9 @@ public class sans {
 
 			while(fileScan.hasNextLine()) {
 				if (fileScan.nextLine().contains("\\")) {
-					fileScan.nextLine();
+					fileString += "\n";
 				}
-				
+
 				fileString += fileScan.nextLine() + "\n";
 
 
