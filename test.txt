@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 December 
 // Ferb
 kevimn
@@ -10,3 +11,14 @@ take me away
 // boys 
 niner 
 four teens 
+=======
+Spagetti 
+Sour De
+Sambo
+tourmaline
+Valve 
+December 
+// Ketaset
+// take me away 
+a sweet escape
+>>>>>>> a486c765a31925a4fe6b0ebb9bc944b081e8ee0d
