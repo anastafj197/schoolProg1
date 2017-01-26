@@ -33,6 +33,8 @@ public class sans {
 					fileString += "\n";
 				}
 
+				System.out.println(current + " curr");
+
 			
 
 				fileString += current + "\n";
