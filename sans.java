@@ -49,6 +49,7 @@ public class sans extends FilterReader {
 					}
 					commentFlag = false;  // reset the flag 
 					if (buf[i] == '/' && buf[i+1] == '*') {
+						buf[i] = '\n';
 						commentFlag = true;
 					} else {
 						//buf[last] = '\n';
