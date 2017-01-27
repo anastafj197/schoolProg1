@@ -23,23 +23,17 @@ public class sans extends FilterReader {
 				return -1;
 			
 			int last = from;
+
 			for (int i = from; i < from + numChars; i++) {
 				if (!commentFlag) {
-					if (buf[i] == '/' && buf[i+1] == '/') {
-						commentFlag = true;
-					}
 					if (buf[i] == '/' && buf[i+1] == '*') {
-						commentFlag = true; 
-					}
-				} else {
+						commentFlag = true;
+					} else {
 						buf[last++] = buf[i];
+					}
+				} else if (buf[i] == '*' && buf[i+1] == '/') {
+					commentFlag = false;
 				}
-				 
-				if (buf[i] == '*' && buf[i] == '/') 
-					commentFlag = false; 
-
-				//if (buf[i] == '/' && buf[i+1] == '/') 
-				//	commentFlag = true;
 			}
 			numChars = last - from;
 		}
