@@ -27,10 +27,7 @@ public class sans extends FilterReader {
 			for (int i = from; i < from + numChars; i++) {
 				if (!commentFlag) {
 					if (buf[i] == '/' && buf[i+1] == '/') {
-						do {
-							i = i++;
-							System.out.println(i);
-						} while (buf[i] != '\n');
+						Si = i++;
 						commentFlag = true;
 					}
 					commentFlag = false;
