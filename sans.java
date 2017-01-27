@@ -38,22 +38,46 @@ public class sans extends FilterReader {
 		}
 		return numChars;
 	}
+
+	public int read() throws IOException {
+		char[] buf = new char[1];
+		int result = read(buf, 0, 1);
+		if (result == -1)
+			return -1;
+		else 
+			return (int) buf[0];
+	}
 		
 
 
 	public static void main (String [] args) throws FileNotFoundException {
 
-		System.out.println("* Enter a txt file name to strip *");
+		//System.out.println("* Enter a txt file name to strip *");
 
-	    Scanner keyboard = new Scanner(System.in);
+	    //Scanner keyboard = new Scanner(System.in);
 
-		String fileName = keyboard.nextLine();
+		//String fileName = keyboard.nextLine();
 
 		try {
+			if (args.length != 1)
+				throw new IllegalArgumentException("Not even the right number of args man!");
 
-			FileReader fRead = new FileReader(fileName);
+			BufferedReader in  = new BufferedReader(new sans(new FileReader(args[0])));
 
-			Scanner fileScan = new Scanner(fRead);
+			String line; 
+			while ((line = in.readLine()) != null)
+				System.out.println(line);
+			in.close();
+		} catch (Exception e) {
+			System.err.println(e);
+			System.err.println("Usage: java sans$Test");
+		}
+	}
+}
+
+	/*		//FileReader fRead = new FileReader(fileName);
+
+			//Scanner fileScan = new Scanner(fRead);
 
 			String fileString = "";
 
@@ -112,3 +136,4 @@ public class sans extends FilterReader {
 
 	}
 }
+*/
