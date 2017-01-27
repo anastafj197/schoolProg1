@@ -6,14 +6,25 @@
 import java.io.*;
 import java.util.*;
 
+// sans comment filter extends the FilterReader 
+// Used to remove java style comments to the file 
+// that you specify in the comand line 
+
 public class sans extends FilterReader {
 
+	// constructor calls super 
 	public sans (Reader in) {
 		super(in);
 	}
 
+	// Boolean flag that tracks if we  
+	// are inside of a comment or not 
 	boolean commentFlag = false; 
-	
+
+	// overwritten read method calls in.read to fill the buffer 
+	// Parameters: takes in a char [] buffer, int length and int from
+	//			   the last character of the comment 
+	// Returns: the number of characters to read 
 	public int read(char[] buf, int from, int len) throws IOException {
 		int numChars = 0;
 
@@ -22,11 +33,11 @@ public class sans extends FilterReader {
 			if (numChars == -1) 
 				return -1;
 			
-			int last = from;
+			int last = from; // set the last character to read 
 
 			for (int i = from; i < from + numChars; i++) {
-				if (!commentFlag) {
-					if (buf[i] == '/' && buf[i+1] == '/') {
+				if (!commentFlag) {  // if we arent in a comment 
+					if (buf[i] == '/' && buf[i+1] == '/') { // check 
 						i = i+2;
 						while (buf[i] != '\n') {
 							buf[i] = 0;
@@ -34,9 +45,9 @@ public class sans extends FilterReader {
 						}
 						//buf[i] = 0;
 						
-						commentFlag = true;
+						commentFlag = true; // flag 
 					}
-					commentFlag = false;
+					commentFlag = false;  // reset the flag 
 					if (buf[i] == '/' && buf[i+1] == '*') {
 						commentFlag = true;
 					} else {
@@ -49,7 +60,7 @@ public class sans extends FilterReader {
 					commentFlag = false;
 				} 
 			}
-			numChars = last - from;
+			numChars = last - from; // calculate remaining characters 
 		}
 		return numChars;
 	}
@@ -80,7 +91,7 @@ public class sans extends FilterReader {
 
 			BufferedReader in  = new BufferedReader(new sans(new FileReader(args[0])));
 
-			String line; 
+			String line; // read line by line 
 
 			while ((line = in.readLine()) != null)
 				System.out.println(line);
