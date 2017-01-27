@@ -25,10 +25,13 @@ public class sans extends FilterReader {
 			int last = from;
 			for (int i = from; i < from + numChars; i++) {
 				if (!commentFlag) {
-					if (buf[i] == '/' && buf[i+1] == '/') 
+					if (buf[i] == '/' && buf[i+1] == '/') {
 						commentFlag = true;
-					else 
-						commentFlag = false; 
+					}
+					if (buf[i] == '/' && buf[i+1] == '*') {
+						commentFlag = true; 
+					}
+				} else 
 						buf[last++] = buf[i];
 				} else if (buf[i] == '*' && buf[i] == '/') 
 					commentFlag = false; 
