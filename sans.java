@@ -31,7 +31,7 @@ public class sans extends FilterReader {
 					} else {
 						buf[last++] = buf[i];
 					}
-					//commentFlag = false;
+					commentFlag = false;
 					if (buf[i] == '/' && buf[i+1] == '*') {
 						commentFlag = true;
 					} else {
