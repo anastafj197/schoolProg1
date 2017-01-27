@@ -27,7 +27,9 @@ public class sans extends FilterReader {
 			for (int i = from; i < from + numChars; i++) {
 				if (!commentFlag) {
 					if (buf[i] == '/' && buf[i+1] == '/') {
-						i = i+100; 
+						do {
+							i = i++;
+						} while (buf[i] != '\n');
 						commentFlag = true;
 					}
 					commentFlag = false;
