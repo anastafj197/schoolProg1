@@ -38,12 +38,11 @@ public class sans extends FilterReader {
 						buf[last++] = buf[i];
 
 					}
+					commentFlag = false;
 				} else if (buf[i] == '*' && buf[i+1] == '/') {
 					buf[i] = buf[i++];
 					commentFlag = false;
-				} else {
-					buf[last++] = buf[i];
-				}
+				} 
 			}
 			numChars = last - from;
 		}
