@@ -32,8 +32,8 @@ public class sans extends FilterReader {
 				} else if (buf[i] == '*' && buf[i] == '/') 
 					commentFlag = false; 
 
-				if (buf[i] == '/' && buf[i+1] == '/') 
-					commentFlag = true;
+				//if (buf[i] == '/' && buf[i+1] == '/') 
+				//	commentFlag = true;
 			}
 			numChars = last - from;
 		}
@@ -60,15 +60,19 @@ public class sans extends FilterReader {
 		//String fileName = keyboard.nextLine();
 
 		try {
+
 			if (args.length != 1)
 				throw new IllegalArgumentException("Not even the right number of args man!");
 
 			BufferedReader in  = new BufferedReader(new sans(new FileReader(args[0])));
 
 			String line; 
+
 			while ((line = in.readLine()) != null)
 				System.out.println(line);
+
 			in.close();
+
 		} catch (Exception e) {
 			System.err.println(e);
 			System.err.println("Usage: java sans$Test");
