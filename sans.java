@@ -29,6 +29,7 @@ public class sans extends FilterReader {
 					if (buf[i] == '/' && buf[i+1] == '/') {
 						do {
 							i = i++;
+							System.out.println(i);
 						} while (buf[i] != '\n');
 						commentFlag = true;
 					}
