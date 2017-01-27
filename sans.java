@@ -41,6 +41,8 @@ public class sans extends FilterReader {
 				} else if (buf[i] == '*' && buf[i+1] == '/') {
 					buf[i] = buf[i++];
 					commentFlag = false;
+				} else {
+					buf[last++] = buf[i];
 				}
 			}
 			numChars = last - from;
