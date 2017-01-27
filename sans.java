@@ -28,10 +28,6 @@ public class sans extends FilterReader {
 				if (!commentFlag) {
 					if (buf[i] == '/' && buf[i+1] == '/') {
 						commentFlag = true;
-						while (i != '\n') {
-							i++;
-						}
-						
 					}
 					commentFlag = false;
 					if (buf[i] == '/' && buf[i+1] == '*') {
