@@ -19,13 +19,13 @@ public class sans extends FilterReader {
 
 		while (numChars == 0) {
 			numChars = in.read(buf, from, len);
-			if (numChars == -1) {
+			if (numChars == -1) 
 				return -1;
-			}
+			
 			int last = from;
 			for (int i = from; i < from + numChars; i++) {
 				if (!commentFlag) {
-					if (buf[i] == '/' && buf[i+1] == '*') 
+					if (buf[i] == '/' && buf[i+1] == '/') 
 						commentFlag = true;
 					else 
 						buf[last++] = buf[i];
