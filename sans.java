@@ -30,7 +30,7 @@ public class sans extends FilterReader {
 						i = i+2;
 						commentFlag = true;
 					}
-					//commentFlag = false;
+					commentFlag = false;
 					if (buf[i] == '/' && buf[i+1] == '*') {
 						commentFlag = true;
 					} else {
@@ -39,6 +39,7 @@ public class sans extends FilterReader {
 
 					}
 				} else if (buf[i] == '*' && buf[i+1] == '/') {
+					buf[i] = buf[i++];
 					commentFlag = false;
 				}
 			}
