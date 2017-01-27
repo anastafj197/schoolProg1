@@ -27,10 +27,11 @@ public class sans extends FilterReader {
 			for (int i = from; i < from + numChars; i++) {
 				if (!commentFlag) {
 					if (buf[i] == '/' && buf[i+1] == '/') {
+						commentFlag = true;
 						while (i != '\n') {
 							i++;
 						}
-						commentFlag = true;
+						
 					}
 					commentFlag = false;
 					if (buf[i] == '/' && buf[i+1] == '*') {
